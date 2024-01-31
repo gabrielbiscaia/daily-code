@@ -1,0 +1,15 @@
+{
+  "name": "dailycode",
+  "version": "1.0.0",
+  "description": "TCC",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Biscaia",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.0"
+  }
+}
