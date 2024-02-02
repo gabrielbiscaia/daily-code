@@ -1,3 +1,5 @@
+const { ipcRenderer } = require("electron");
+
 // Instanciando botões
 var btn_start = document.getElementById("button-start");
 var btn_cfg = document.getElementById("button-config");
@@ -9,6 +11,12 @@ var btn_back2 = document.getElementById("btn-back2");
 var box_menu = document.getElementById("box-menu");
 var box_cfg = document.getElementById("box-config");
 var box_crd = document.getElementById("box-credits");
+
+// Adiciona um ouvinte de evento para o clique no botão
+btn_start.addEventListener("click", () => {
+  // Envia uma mensagem para o processo principal para carregar o game.html
+  ipcRenderer.send("load-game");
+});
 
 // Quando o usuário clica no botão "Configurações", oculta o menu e exibe as configurações
 btn_cfg.onclick = function() {
