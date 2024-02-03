@@ -2,16 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
     <link rel="stylesheet" href="../styles/menu.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <title>DailyCode - Menu</title>
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
   </head>
   <body>
     <div id="img-background"></div>
@@ -53,5 +49,6 @@
     </div>
     
     <script src="../scripts/menu.js"></script>
+    <script src="../scripts/renderer.js"></script>
   </body>
 </html>
