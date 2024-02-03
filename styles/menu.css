@@ -91,6 +91,7 @@ h2{
   
 button{
     position: relative;
+    font-family: 'Play', sans-serif;
     text-decoration: none;
     background: none;
     color: white;
