@@ -1,8 +1,7 @@
-const { contextBridge, ipcRenderer } = require('electron')
-const path = require('node:path')
+const { contextBridge, ipcRenderer } = require('electron/renderer');
 
-contextBridge.exposeInMainWorld('electron', {
-  startDrag: (fileName) => {
-    ipcRenderer.send('ondragstart', path.join(process.cwd(), fileName))
-  }
-})
+contextBridge.exposeInMainWorld('electronAPI', {
+  startGame: () => {
+    ipcRenderer.send('start-game');
+  },
+});
