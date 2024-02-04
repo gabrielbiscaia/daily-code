@@ -6,10 +6,19 @@ const createWindow = () => {
     width: 1280,
     height: 720,
     resizable: false,
+    frame: true,
     webPreferences: {
-      preload: path.join('', 'preload.js'),
+      preload: path.join(__dirname, 'preload.js'),
+      devTools: !app.isPackaged,
     }
   });
+
+
+ipcMain.on("start-game", () =>{
+  mainWindow.loadFile('src/game.html')
+})
+
+  mainWindow.setMenuBarVisibility(false)
 
   mainWindow.loadFile("src/menu.html");
 };
