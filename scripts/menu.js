@@ -41,3 +41,7 @@ window.onload = function(){
     sliderValue.innerHTML = slider.value;
   }
 }
+
+btn_start.addEventListener("click", () =>{
+  window.electronAPI.startGame();
+})
