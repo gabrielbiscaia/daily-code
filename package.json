@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^28.2.1"
+  },
+  "dependencies": {
+    "typewriter-effect": "^2.21.0"
   }
 }
