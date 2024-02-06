@@ -3,6 +3,7 @@ body{
     padding: 0;
     border: 0;
     font-family: 'Play', sans-serif;
+    overflow: hidden;
 }
 
 #img-background{
@@ -11,11 +12,20 @@ body{
     bottom: 0;
 }
 
-#img-character{
+#img-character1{
     position: absolute;
     height: 640px;
     bottom: 0%;
-    left: 50%;
+    left: 25%;
+    transform: translateX(-50%);
+    z-index: 1100;
+}
+
+#img-character2{
+    position: absolute;
+    height: 640px;
+    bottom: 0%;
+    left: 75%;
     transform: translateX(-50%);
     z-index: 1100;
 }
