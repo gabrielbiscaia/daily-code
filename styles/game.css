@@ -27,7 +27,7 @@ body{
     padding: 8px;
     color: white;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 36px;
     background-color: rgba(175, 89, 62, 0.95);
     border: 8px solid rgba(99, 64, 53, 1);
     border-bottom: none;
@@ -39,7 +39,7 @@ body{
 #text{
     color: white;
     text-align: justify;
-    font-size: 24px;
+    font-size: 28px;
     padding: 24px;
     letter-spacing: 1.6px;
 }

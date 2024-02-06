@@ -9,10 +9,9 @@ var text = document.getElementById("text");
 // Efeito de digitação
 const typewriter = new Typewriter(text, {
     autoStart: true,
-    strings: 'teste',
+    strings: "Eita, que horas será que são em?",
     loop: false,
     delay: 15,
-    deleteSpeed: 1,
     pauseFor: 0,
     cursor: "",
 })
@@ -20,17 +19,6 @@ const typewriter = new Typewriter(text, {
 // Definindo os dados para cada parte do jogo
 var gameData = [
     // Parte 1 - Quarto
-    {
-        black_screen_transition: true,
-        id: 0,
-        speaker: "Enzo",
-        text: "Eita, que horas será que são em?",
-        img_character1: "../img/enzo.png",
-        img_character2: "",
-        main_character1: true,
-        background: "../img/car.png",
-        audio: "",
-    },
     {
         black_screen_transition: false,
         id: 1,
@@ -183,7 +171,7 @@ function nextStep() {
 
         // Digite o texto da próxima etapa usando o Typewriter
         typewriter
-            .deleteAll()
+            .deleteAll(1)
             .typeString(nextData.text)
             .start();
     } else {
