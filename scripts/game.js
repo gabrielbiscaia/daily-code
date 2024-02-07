@@ -14,12 +14,8 @@ const audioFiles = {
 
 // Função para reproduzir um áudio pré-carregado
 function playAudio(audio) {
-    console.log("Entrou")
     audio.play();
 }
-
-// Exemplo de uso
-playAudio(audioFiles.audio1); // Reproduz o primeiro áudio
 
 // Efeito de digitação
 const typewriter = new Typewriter(text, {
