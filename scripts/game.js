@@ -6,6 +6,26 @@ var img_character2 = document.getElementById("img-character2");
 var speaker = document.getElementById("speaker");
 var text = document.getElementById("text");
 
+// Instanciação dos audios
+// Objeto para armazenar os áudios pré-carregados
+const audioFiles = {
+    audio1: new Audio('../audio/interface/Achievement.wav'),
+    audio2: new Audio('../audio/interface/menu-button-click-pop-up.wav'),
+    // Adicione mais áudios conforme necessário
+};
+
+// Função para reproduzir um áudio pré-carregado
+function playAudio(audio) {
+    console.log("Entrou")
+    audio.play();
+}
+
+// Exemplo de uso
+playAudio(audioFiles.audio1); // Reproduz o primeiro áudio
+playAudio(audioFiles.audio2); // Reproduz o segundo áudio
+
+
+
 // Efeito de digitação
 const typewriter = new Typewriter(text, {
     autoStart: true,
@@ -38,7 +58,7 @@ var gameData = [
         img_character1: "",
         img_character2: "",
         main_character1: true,
-        background: "../img/piter-waking.png",
+        background: "../img/piter-shower.png",
         audio: "",
     },
     {
@@ -49,7 +69,7 @@ var gameData = [
         img_character1: "",
         img_character2: "",
         main_character1: true,
-        background: "../img/piter-waking.png",
+        background: "../img/piter-car.png",
         audio: "",
     },
     {
