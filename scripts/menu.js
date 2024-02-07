@@ -10,6 +10,21 @@ var box_menu = document.getElementById("box-menu");
 var box_cfg = document.getElementById("box-config");
 var box_crd = document.getElementById("box-credits");
 
+// Instanciação dos audios
+// Objeto para armazenar os áudios pré-carregados
+const audioFiles = {
+  final: new Audio('../audio/interface/final.wav'),
+};
+
+// Função para reproduzir um áudio pré-carregado
+function playAudio(audio) {
+  console.log("Entrou")
+  audio.play();
+}
+
+// Exemplo de uso
+playAudio(audioFiles.audio1); // Reproduz o primeiro áudio
+
 // Quando o usuário clica no botão "Configurações", oculta o menu e exibe as configurações
 btn_cfg.onclick = function() {
   box_menu.style.display = "none";

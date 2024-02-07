@@ -9,9 +9,7 @@ var text = document.getElementById("text");
 // Instanciação dos audios
 // Objeto para armazenar os áudios pré-carregados
 const audioFiles = {
-    audio1: new Audio('../audio/interface/Achievement.wav'),
-    audio2: new Audio('../audio/interface/menu-button-click-pop-up.wav'),
-    // Adicione mais áudios conforme necessário
+    final: new Audio('../audio/interface/final.wav'),
 };
 
 // Função para reproduzir um áudio pré-carregado
@@ -22,9 +20,6 @@ function playAudio(audio) {
 
 // Exemplo de uso
 playAudio(audioFiles.audio1); // Reproduz o primeiro áudio
-playAudio(audioFiles.audio2); // Reproduz o segundo áudio
-
-
 
 // Efeito de digitação
 const typewriter = new Typewriter(text, {
