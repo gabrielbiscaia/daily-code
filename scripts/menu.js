@@ -7,7 +7,7 @@ window.addEventListener("load", function(){
     playAudio(audioFiles.next);
     loader.style.display = 'none';
     menu.style.display = 'block';
-  }, 2000)
+  }, 5000)
 })
 
 // Instanciando botões

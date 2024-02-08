@@ -29,8 +29,9 @@ body{
 }
 
 #preloader-text{
-    color: rgba(99, 64, 53, 1);
-    font-size: 64px;
+    color: rgb(122, 54, 147);
+    font-size: 32px;
+    text-align: center;
     position: absolute;
     display: block;
     top: 32%;
