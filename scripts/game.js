@@ -13,6 +13,11 @@ var blackScreen = document.getElementById("black-screen");
 // Instanciação do objeto para armazenar os áudios pré-carregados
 const audioFiles = {
     piter_comemoracao: new Audio('../audio/character/piter-comemoracao.wav'),
+    piter_entendeu: new Audio('../audio/character/piter-entendeu.wav'),
+    piter_erro: new Audio('../audio/character/piter-erro.wav'),
+    piter_feliz: new Audio('../audio/character/piter-feliz.wav'),
+    piter_irritado: new Audio('../audio/character/piter-irritado.wav'),
+    piter_surpreso: new Audio('../audio/character/piter-surpreso.wav'),
 };
 
 // Instancia do efeito de digitação
@@ -37,7 +42,7 @@ var gameData = [
         img_character2: "",
         main_character1: true,
         background: "../img/piter-waking.png",
-        audio: "",
+        audio: audioFiles.piter_comemoracao,
     },
     {
         black_screen_transition: false,
@@ -48,7 +53,7 @@ var gameData = [
         img_character2: "",
         main_character1: true,
         background: "../img/piter-shower.png",
-        audio: "",
+        audio: audioFiles.piter_entendeu,
     },
     {
         black_screen_transition: false,
@@ -59,7 +64,7 @@ var gameData = [
         img_character2: "",
         main_character1: true,
         background: "../img/piter-car.png",
-        audio: "",
+        audio: audioFiles.piter_erro,
     },
     {
         black_screen_transition: false,
@@ -70,7 +75,7 @@ var gameData = [
         img_character2: "",
         main_character1: true,
         background: "../img/piter-waking.png",
-        audio: "",
+        audio: audioFiles.piter_surpreso,
     },
     {
         black_screen_transition: false,
@@ -107,7 +112,7 @@ var gameData = [
     },
 ];
 
-callBlackScreen(0, 5000, 3000)
+callBlackScreen(0, 4000, 2000)
 
 // Função para reproduzir um áudio pré-carregado
 function playAudio(audio) {
@@ -124,28 +129,29 @@ function nextStep() {
         speaker.textContent = nextData.speaker;
         img_background.src = nextData.background;
 
-    if (nextData.img_character1 === "") {
-        img_character1.style.display = "none";
-    } else {
-        img_character1.style.display = "block"; // Ou qualquer outro valor que você precise
-        img_character1.src = nextData.img_character1;
-    }
+        if (nextData.img_character1 === "") {
+            img_character1.style.display = "none";
+        } else {
+            img_character1.style.display = "block"; // Ou qualquer outro valor que você precise
+            img_character1.src = nextData.img_character1;
+        }
 
-    if (nextData.img_character2 === "") {
-        img_character2.style.display = "none";
-    } else {
-        img_character2.style.display = "block"; // Ou qualquer outro valor que você precise
-        img_character2.src = nextData.img_character2;
-    }
+        if (nextData.img_character2 === "") {
+            img_character2.style.display = "none";
+        } else {
+            img_character2.style.display = "block"; // Ou qualquer outro valor que você precise
+            img_character2.src = nextData.img_character2;
+        }
 
         // Reproduza o áudio, se houver
-        if (nextData.audio) {
-            // Código para reproduzir o áudio
+        if (nextData.audio != "") {
+            nextData.audio.volume = 0.3;
+            playAudio(nextData.audio);
         }
 
         // Digite o texto da próxima etapa usando o Typewriter
         typewriter
-            .deleteAll(1)
+            .deleteAll(0.1)
             .typeString(nextData.text)
             .start();
     } else {
