@@ -1,3 +1,4 @@
+// Declaração de variáveis
 // Referenciado elementos da tela
 var btn_arrow = document.getElementById("arrow");
 var img_background = document.getElementById("img-background");
@@ -6,18 +7,15 @@ var img_character2 = document.getElementById("img-character2");
 var speaker = document.getElementById("speaker");
 var text = document.getElementById("text");
 
-// Instanciação dos audios
-// Objeto para armazenar os áudios pré-carregados
+// Instancia da black screen
+var blackScreen = document.getElementById("black-screen");
+
+// Instanciação do objeto para armazenar os áudios pré-carregados
 const audioFiles = {
-    final: new Audio('../audio/interface/final.wav'),
+    piter_comemoracao: new Audio('../audio/character/piter-comemoracao.wav'),
 };
 
-// Função para reproduzir um áudio pré-carregado
-function playAudio(audio) {
-    audio.play();
-}
-
-// Efeito de digitação
+// Instancia do efeito de digitação
 const typewriter = new Typewriter(text, {
     autoStart: true,
     strings: "Eita, que horas será que são em?",
@@ -109,6 +107,13 @@ var gameData = [
     },
 ];
 
+callBlackScreen(0, 5000, 3000)
+
+// Função para reproduzir um áudio pré-carregado
+function playAudio(audio) {
+    audio.play();
+}
+
 function nextStep() {
     // Verifique se ainda há etapas restantes
     if (gameData.length > 0) {
@@ -149,8 +154,32 @@ function nextStep() {
     }
 }
 
+function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
+    blackScreen.style.display = "block"
+
+    // Define a duração da transição de fade-in
+    blackScreen.style.setProperty("--fade-in-duration", fadeInDuration + "ms");
+
+    // Adiciona uma classe para ativar a transição de fade-in
+    blackScreen.classList.add("fade-in");
+
+    // Aguarda um curto período de tempo antes de remover a classe para garantir que o fade-in tenha tempo para completar
+    setTimeout(function() {
+        // Define a duração da transição de fade-out
+        blackScreen.style.setProperty("--fade-out-duration", fadeOutDuration + "ms");
+
+        // Remove a classe para ativar a transição de fade-out
+        blackScreen.classList.remove("fade-in");
+
+        // Adiciona uma classe para iniciar a transição de fade-out
+        blackScreen.classList.add("fade-out");
+
+        setTimeout(function(){
+            blackScreen.style.display = "none"
+        }, 3000)
+
+    }, blackScreenDuration);
+}
+
 btn_arrow.addEventListener("click", nextStep);
 
-
-// Funcao para fazer a transição e desativar o botao
-// Fazer as letras terem o efeito de escrevendo

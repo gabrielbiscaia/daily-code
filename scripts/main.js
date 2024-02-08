@@ -15,10 +15,10 @@ const createWindow = () => {
 
 
 ipcMain.on("start-game", () =>{
-  mainWindow.loadFile('src/game.html')
+  mainWindow.loadFile("src/game.html");
 })
 
-  mainWindow.setMenuBarVisibility(false)
+  mainWindow.setMenuBarVisibility(false);
 
   mainWindow.loadFile("src/menu.html");
 };
