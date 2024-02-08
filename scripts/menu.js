@@ -1,3 +1,15 @@
+// Instanciando pre-loader
+var loader = document.getElementById("preloader");
+var menu = document.getElementById("menu");
+
+window.addEventListener("load", function(){
+  setTimeout(function(){
+    playAudio(audioFiles.next);
+    loader.style.display = 'none';
+    menu.style.display = 'block';
+  }, 2000)
+})
+
 // Instanciando botões
 var btn_start = document.getElementById("button-start");
 var btn_cfg = document.getElementById("button-config");
@@ -63,5 +75,7 @@ window.onload = function(){
 
 btn_start.addEventListener("click", () =>{
   playAudio(audioFiles.next);
-  window.electronAPI.startGame();
+  setTimeout(function(){
+    window.electronAPI.startGame();
+  },100)
 })

@@ -10,44 +10,48 @@
     <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
   </head>
   <body>
-    <div id="img-background"></div>
-    <img id="img-menu" src="../img/piter.png" alt="">
-
-    <div id="box-menu" class="box">
-      <h1>Daily Code</h1>
-      <div id="buttons">
-        <button id="button-start"">Novo Jogo</button>
-        <button id="button-config">Configurações</button>
-        <button id="button-credits">Créditos</button>
-      </div>
+    <div id="preloader">
+      <div id="preloader-text">Carregando...</div>
     </div>
+    <div id="menu">
+      <div id="img-background"></div>
+      <img id="img-menu" src="../img/piter.png" alt="">
 
-    <div id="box-config" class="box">
-      <h2>Configurações</h2>
-      <h3>Volume</h3>
-      <div class="slider-cont">
-        <div class="slider">
-          <input type="range" min="0" max="100" value="50">
-          <progress min="0" max="100" value="50"></progress>
+      <div id="box-menu" class="box">
+        <h1>Daily Code</h1>
+        <div id="buttons">
+          <button id="button-start"">Novo Jogo</button>
+          <button id="button-config">Configurações</button>
+          <button id="button-credits">Créditos</button>
         </div>
-        <div class="sliderValue">50</div>
       </div>
-      <button id="btn-back1" class="button-back">Voltar</button>
-    </div>
+
+      <div id="box-config" class="box">
+        <h2>Configurações</h2>
+        <h3>Volume</h3>
+        <div class="slider-cont">
+          <div class="slider">
+            <input type="range" min="0" max="100" value="50">
+            <progress min="0" max="100" value="50"></progress>
+          </div>
+          <div class="sliderValue">50</div>
+        </div>
+        <button id="btn-back1" class="button-back">Voltar</button>
+      </div>
 
 
-    <div id="box-credits" class="box">
-      <h2>Créditos</h2>
-      <div id="text-credits">
-        <h4>Trabalho de Conclusão de Curso</h4>
-        <h3>Orientado</h3>
-        <h4>Gabriel Crespo Biscaia</h4>
-        <h3>Orientador</h3>
-        <h4>Felippe Fernandes da Silva</h4>
+      <div id="box-credits" class="box">
+        <h2>Créditos</h2>
+        <div id="text-credits">
+          <h4>Trabalho de Conclusão de Curso</h4>
+          <h3>Orientado</h3>
+          <h4>Gabriel Crespo Biscaia</h4>
+          <h3>Orientador</h3>
+          <h4>Felippe Fernandes da Silva</h4>
+        </div>
+        <button id="btn-back2" class="button-back">Voltar</button>
       </div>
-      <button id="btn-back2" class="button-back">Voltar</button>
-    </div>
-    
+    </div>  
     <script src="../scripts/menu.js"></script>
   </body>
 </html>
