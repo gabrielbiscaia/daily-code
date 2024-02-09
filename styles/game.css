@@ -107,8 +107,8 @@ body{
 #arrow{
     display: inline-block;
     position: fixed;
-    bottom: 48px;
-    right: 88px;
+    bottom: 56px;
+    right: 96px;
     transform: scale(1.6);
     transition: 0.3s;
     z-index: 1500;

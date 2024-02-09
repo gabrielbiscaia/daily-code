@@ -6,6 +6,7 @@ var img_character1 = document.getElementById("img-character1");
 var img_character2 = document.getElementById("img-character2");
 var speaker = document.getElementById("speaker");
 var text = document.getElementById("text");
+var black_screen_transition;
 
 // Instancia da black screen
 var blackScreen = document.getElementById("black-screen");
@@ -41,7 +42,7 @@ const typewriter = new Typewriter(text, {
 var gameData = [
     // Parte 1 - Quarto
     {
-        black_screen_transition: false,
+        black_screen_transition: true,
         id: 1,
         speaker: "Piter",
         text: "MEU DEUS JÁ SÃO 6 HORAS",
@@ -52,7 +53,7 @@ var gameData = [
         audio: audioFiles.piter_comemoracao,
     },
     {
-        black_screen_transition: false,
+        black_screen_transition: true,
         id: 2,
         speaker: "Piter",
         text: "Ta na hora de levantar! Hoje eu tenho prova de lógica de programação, não posso me atrasar de maneira alguma.",
@@ -120,12 +121,12 @@ var gameData = [
 ];
 
 // Começo do jogo
-callBlackScreen(0, 4000, 2000)
+callBlackScreen(0, 3000, 3000)
 audioFiles.alarme.volume = 0.3;
 playAudio(audioFiles.alarme);
 setTimeout(function(){
     pauseAudio(audioFiles.alarme)
-}, 2100)
+}, 2200)
 
 // Função para reproduzir um áudio pré-carregado
 function playAudio(audio) {
@@ -139,6 +140,12 @@ function pauseAudio(audio){
 function nextStep() {
     if (gameData.length > 0) {
         var nextData = gameData.shift();
+
+        console.log(nextData.black_screen_transition)
+        if(nextData.black_screen_transition){
+            callBlackScreen(100, 1000, 2000)
+        }
+
         speaker.textContent = nextData.speaker;
         img_background.src = nextData.background;
 
@@ -169,7 +176,7 @@ function nextStep() {
 }
 
 function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
-    blackScreen.style.display = "block"
+    btn_arrow.style.display = 'none';
 
     blackScreen.style.setProperty("--fade-in-duration", fadeInDuration + "ms");
     blackScreen.classList.add("fade-in");
@@ -179,11 +186,13 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
         blackScreen.classList.remove("fade-in");
         blackScreen.classList.add("fade-out");
 
-        setTimeout(function(){
-            blackScreen.style.display = "none"
-        }, 3000)
-
     }, blackScreenDuration);
+
+    setTimeout(function(){
+        btn_arrow.style.display = 'block';
+    }, blackScreenDuration + fadeOutDuration)
+    blackScreen.classList.remove("fade-out");
+
 }
 
 btn_arrow.addEventListener("click", nextStep);
