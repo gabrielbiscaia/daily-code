@@ -26,6 +26,10 @@ body{
     animation: fadeout var(--fade-out-duration) forwards;
 }
 
+.fade-out-complete {
+    pointer-events: auto; /* Restaure os eventos de clique após a transição de fade-out */
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -103,13 +107,15 @@ body{
 #arrow{
     display: inline-block;
     position: fixed;
-    bottom: 16px;
-    right: 16px;
+    bottom: 48px;
+    right: 88px;
     transform: scale(1.6);
     transition: 0.3s;
+    z-index: 1500;
 }
 
 #arrow:hover{
     cursor: pointer;
     transform: scale(2.4);
+    z-index: 1500;
 }
