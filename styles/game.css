@@ -18,6 +18,7 @@ body{
     opacity: 1; 
 }
 
+/* Efeitos de transição */
 .fade-in {
     animation: fadein var(--fade-in-duration) forwards;
 }
@@ -40,7 +41,7 @@ body{
     to { opacity: 0; }
 }
 
-
+/* Imagens */
 #img-background{
     position: fixed;
     top: 0;
@@ -67,6 +68,7 @@ body{
     z-index: 1100;
 }
 
+/* Quem esta falando */
 #speaker{
     position: absolute;
     left: 80px;
@@ -83,6 +85,8 @@ body{
     letter-spacing: 2px;
 }
 
+
+/* Caixa de texto e seus elementos */
 #text{
     color: white;
     text-align: justify;
@@ -118,4 +122,39 @@ body{
     cursor: pointer;
     transform: scale(2.4);
     z-index: 1500;
+}
+
+/* Caixa de complete */
+#box-question{
+    position: absolute;
+    top: 72px;
+    right: 80px;
+    height: 160px;
+    width: 400px;
+    z-index: 1500;
+    border: solid 8px #23272A;
+    border-radius: 16px;
+    background-color: #2C2F33;
+    padding: 24px;
+    display: flex; /* Usa um layout flexível */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+}
+
+#box-question-text{
+    color: white;
+    font-size: 20px;
+    position: relative;
+    right: 64px;
+    top: 8px;
+}
+
+input{
+    font-size: 20px;
+    color: white;
+    background-color: #23272A;
+    width: 48px;
+    height: 24px;
+    text-align: center;
+    outline: none;
 }
