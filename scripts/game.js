@@ -42,81 +42,76 @@ const typewriter = new Typewriter(text, {
 var gameData = [
     // Parte 1 - Quarto
     {
-        black_screen_transition: true,
-        id: 1,
+        black_screen_transition: false,
         speaker: "Piter",
         text: "MEU DEUS JÁ SÃO 6 HORAS",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
         background: "../img/piter-waking.png",
-        audio: audioFiles.piter_comemoracao,
+        audio: audioFiles.piter_irritado,
     },
     {
-        black_screen_transition: true,
-        id: 2,
+        black_screen_transition: false,
         speaker: "Piter",
         text: "Ta na hora de levantar! Hoje eu tenho prova de lógica de programação, não posso me atrasar de maneira alguma.",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
-        background: "../img/piter-shower.png",
-        audio: audioFiles.piter_entendeu,
+        background: "../img/piter-waking.png",
+        audio: "",
     },
     {
         black_screen_transition: false,
-        id: 3,
         speaker: "Piter",
         text: "E falando em prova, não estudei quase nada... Que que eu faço agora.",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
-        background: "../img/piter-car.png",
-        audio: audioFiles.piter_erro,
+        background: "../img/piter-waking.png",
+        audio: "",
     },
     {
         black_screen_transition: false,
-        id: 4,
         speaker: "Piter",
         text: "E se eu...",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
         background: "../img/piter-waking.png",
-        audio: audioFiles.piter_surpreso,
+        audio: "",
     },
     {
         black_screen_transition: false,
-        id: 5,
         speaker: "Piter",
         text: "Já sei, vou estudando para prova conforme eu vou indo pra faculdade!",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
         background: "../img/piter-waking.png",
-        audio: "",
+        audio: audioFiles.piter_comemoracao,
     },
     {
         black_screen_transition: false,
-        id: 6,
         speaker: "Piter",
-        text: "Assim vou treinando minha lógica de programação pra ir com a cabeça fresca pra faculdade!",
+        text: "Assim vou treinando minha lógica de programação pra ir com a cabeça fresca pra prova!",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
         background: "../img/piter-waking.png",
         audio: "",
     },
     {
         black_screen_transition: false,
-        id: 7,
         speaker: "Piter",
         text: "Vou tomar um banho pra ver se eu acordo, preciso estar 100% acordado para fazer essa prova.",
         img_character1: "",
         img_character2: "",
-        main_character1: true,
         background: "../img/piter-waking.png",
         audio: "",
+    },
+    {
+        black_screen_transition: true,
+        speaker: "Piter",
+        text: "... Cara o que vai cair na prova mesmo?",
+        img_character1: "",
+        img_character2: "",
+        background: "../img/piter-shower.png",
+        audio: audioFiles.porta,
     },
 ];
 
@@ -165,7 +160,9 @@ function nextStep() {
 
         if (nextData.audio != "") {
             nextData.audio.volume = 0.3;
-            playAudio(nextData.audio);
+            setTimeout(function(){
+                playAudio(nextData.audio);
+            },200)
         }
 
         typewriter
@@ -190,7 +187,7 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
 
     setTimeout(function(){
         btn_arrow.style.display = 'block';
-    }, blackScreenDuration + fadeOutDuration)
+    }, blackScreenDuration + 1000)
     blackScreen.classList.remove("fade-out");
 
 }
