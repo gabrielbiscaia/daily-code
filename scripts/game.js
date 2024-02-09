@@ -6,7 +6,9 @@ var img_character1 = document.getElementById("img-character1");
 var img_character2 = document.getElementById("img-character2");
 var speaker = document.getElementById("speaker");
 var text = document.getElementById("text");
+var box_question = document.getElementById("box-question");
 var black_screen_transition;
+var thereIsQuestion;
 
 // Instancia da black screen
 var blackScreen = document.getElementById("black-screen");
@@ -49,6 +51,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: audioFiles.piter_irritado,
+        thereIsQuestion: true,
     },
     {
         black_screen_transition: false,
@@ -58,6 +61,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: "",
+        thereIsQuestion: false,
     },
     {
         black_screen_transition: false,
@@ -67,6 +71,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: "",
+        thereIsQuestion: false,
     },
     {
         black_screen_transition: false,
@@ -76,6 +81,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: "",
+        thereIsQuestion: false,
     },
     {
         black_screen_transition: false,
@@ -85,6 +91,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: audioFiles.piter_comemoracao,
+        thereIsQuestion: false,
     },
     {
         black_screen_transition: false,
@@ -94,6 +101,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: "",
+        thereIsQuestion: false,
     },
     {
         black_screen_transition: false,
@@ -103,6 +111,7 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-waking.png",
         audio: "",
+        thereIsQuestion: false,
     },
     {
         black_screen_transition: true,
@@ -112,11 +121,12 @@ var gameData = [
         img_character2: "",
         background: "../img/piter-shower.png",
         audio: audioFiles.porta,
+        thereIsQuestion: false,
     },
 ];
 
 // Começo do jogo
-callBlackScreen(0, 3000, 3000)
+callBlackScreen(0, 3000, 3000, false)
 audioFiles.alarme.volume = 0.3;
 playAudio(audioFiles.alarme);
 setTimeout(function(){
@@ -136,9 +146,14 @@ function nextStep() {
     if (gameData.length > 0) {
         var nextData = gameData.shift();
 
-        console.log(nextData.black_screen_transition)
         if(nextData.black_screen_transition){
-            callBlackScreen(100, 1000, 2000)
+            callBlackScreen(100, 1000, 2000,nextData.thereIsQuestion)
+        }else{
+            if(nextData.thereIsQuestion){
+                box_question.style.display = "block"
+            }else{
+                box_question.style.display = "none"
+            }
         }
 
         speaker.textContent = nextData.speaker;
@@ -172,7 +187,7 @@ function nextStep() {
     }
 }
 
-function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
+function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration, thereIsQuestion){
     btn_arrow.style.display = 'none';
 
     blackScreen.style.setProperty("--fade-in-duration", fadeInDuration + "ms");
@@ -186,7 +201,11 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
     }, blackScreenDuration);
 
     setTimeout(function(){
-        btn_arrow.style.display = 'block';
+        if(thereIsQuestion){
+            box_question.style.display = "block";
+        }else{
+            btn_arrow.style.display = 'block';
+        }
     }, blackScreenDuration + 1000)
     blackScreen.classList.remove("fade-out");
 
