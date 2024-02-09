@@ -20,7 +20,7 @@ ipcMain.on("start-game", () =>{
 
   mainWindow.setMenuBarVisibility(false);
 
-  mainWindow.loadFile("src/menu.html");
+  mainWindow.loadFile("src/game.html");
 };
 
 app.whenReady().then(createWindow);

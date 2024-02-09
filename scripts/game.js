@@ -12,12 +12,19 @@ var blackScreen = document.getElementById("black-screen");
 
 // Instanciação do objeto para armazenar os áudios pré-carregados
 const audioFiles = {
+    // Audios do piter
     piter_comemoracao: new Audio('../audio/character/piter-comemoracao.wav'),
     piter_entendeu: new Audio('../audio/character/piter-entendeu.wav'),
     piter_erro: new Audio('../audio/character/piter-erro.wav'),
     piter_feliz: new Audio('../audio/character/piter-feliz.wav'),
     piter_irritado: new Audio('../audio/character/piter-irritado.wav'),
     piter_surpreso: new Audio('../audio/character/piter-surpreso.wav'),
+    // Audios transição
+    alarme: new Audio('../audio/environment/alarme.wav'),
+    cafe: new Audio('../audio/environment/cafe.wav'),
+    carro: new Audio('../audio/environment/carro.wav'),
+    porta: new Audio('../audio/environment/porta.wav'),
+    restaurante: new Audio('../audio/environment/restaurante.wav'),
 };
 
 // Instancia do efeito de digitação
@@ -112,72 +119,64 @@ var gameData = [
     },
 ];
 
+// Começo do jogo
 callBlackScreen(0, 4000, 2000)
+audioFiles.alarme.volume = 0.3;
+playAudio(audioFiles.alarme);
+setTimeout(function(){
+    pauseAudio(audioFiles.alarme)
+}, 2100)
 
 // Função para reproduzir um áudio pré-carregado
 function playAudio(audio) {
     audio.play();
 }
 
-function nextStep() {
-    // Verifique se ainda há etapas restantes
-    if (gameData.length > 0) {
-        // Obtenha os dados da próxima etapa
-        var nextData = gameData.shift();
+function pauseAudio(audio){
+    audio.pause();
+}
 
-        // Atualize os elementos da tela com os dados da próxima etapa
+function nextStep() {
+    if (gameData.length > 0) {
+        var nextData = gameData.shift();
         speaker.textContent = nextData.speaker;
         img_background.src = nextData.background;
 
         if (nextData.img_character1 === "") {
             img_character1.style.display = "none";
         } else {
-            img_character1.style.display = "block"; // Ou qualquer outro valor que você precise
+            img_character1.style.display = "block";
             img_character1.src = nextData.img_character1;
         }
 
         if (nextData.img_character2 === "") {
             img_character2.style.display = "none";
         } else {
-            img_character2.style.display = "block"; // Ou qualquer outro valor que você precise
+            img_character2.style.display = "block";
             img_character2.src = nextData.img_character2;
         }
 
-        // Reproduza o áudio, se houver
         if (nextData.audio != "") {
             nextData.audio.volume = 0.3;
             playAudio(nextData.audio);
         }
 
-        // Digite o texto da próxima etapa usando o Typewriter
         typewriter
             .deleteAll(0.1)
             .typeString(nextData.text)
             .start();
-    } else {
-        // Se não houver mais etapas, você pode fazer algo, como encerrar o jogo ou mostrar uma mensagem de conclusão
-        console.log("Fim do jogo!");
     }
 }
 
 function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration){
     blackScreen.style.display = "block"
 
-    // Define a duração da transição de fade-in
     blackScreen.style.setProperty("--fade-in-duration", fadeInDuration + "ms");
-
-    // Adiciona uma classe para ativar a transição de fade-in
     blackScreen.classList.add("fade-in");
 
-    // Aguarda um curto período de tempo antes de remover a classe para garantir que o fade-in tenha tempo para completar
     setTimeout(function() {
-        // Define a duração da transição de fade-out
         blackScreen.style.setProperty("--fade-out-duration", fadeOutDuration + "ms");
-
-        // Remove a classe para ativar a transição de fade-out
         blackScreen.classList.remove("fade-in");
-
-        // Adiciona uma classe para iniciar a transição de fade-out
         blackScreen.classList.add("fade-out");
 
         setTimeout(function(){
