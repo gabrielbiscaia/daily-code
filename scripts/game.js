@@ -1,34 +1,20 @@
+import { gameData } from './gameData.js';
+import { audioFiles } from './audioData.js';
+
 // Declaração de variáveis
 // Referenciado elementos da tela
-var btn_arrow = document.getElementById("arrow");
-var img_background = document.getElementById("img-background");
-var img_character1 = document.getElementById("img-character1");
-var img_character2 = document.getElementById("img-character2");
-var speaker = document.getElementById("speaker");
-var text = document.getElementById("text");
-var box_question = document.getElementById("box-question");
+const btn_arrow = document.getElementById("arrow");
+const img_background = document.getElementById("img-background");
+const img_character1 = document.getElementById("img-character1");
+const img_character2 = document.getElementById("img-character2");
+const speaker = document.getElementById("speaker");
+const text = document.getElementById("text");
+const box_question = document.getElementById("box-question");
 var black_screen_transition;
 var thereIsQuestion;
 
 // Instancia da black screen
 var blackScreen = document.getElementById("black-screen");
-
-// Instanciação do objeto para armazenar os áudios pré-carregados
-const audioFiles = {
-    // Audios do piter
-    piter_comemoracao: new Audio('../audio/character/piter-comemoracao.wav'),
-    piter_entendeu: new Audio('../audio/character/piter-entendeu.wav'),
-    piter_erro: new Audio('../audio/character/piter-erro.wav'),
-    piter_feliz: new Audio('../audio/character/piter-feliz.wav'),
-    piter_irritado: new Audio('../audio/character/piter-irritado.wav'),
-    piter_surpreso: new Audio('../audio/character/piter-surpreso.wav'),
-    // Audios transição
-    alarme: new Audio('../audio/environment/alarme.wav'),
-    cafe: new Audio('../audio/environment/cafe.wav'),
-    carro: new Audio('../audio/environment/carro.wav'),
-    porta: new Audio('../audio/environment/porta.wav'),
-    restaurante: new Audio('../audio/environment/restaurante.wav'),
-};
 
 // Instancia do efeito de digitação
 const typewriter = new Typewriter(text, {
@@ -40,95 +26,13 @@ const typewriter = new Typewriter(text, {
     cursor: "",
 })
 
-// Definindo os dados para cada parte do jogo
-var gameData = [
-    // Parte 1 - Quarto
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "MEU DEUS JÁ SÃO 6 HORAS",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: audioFiles.piter_irritado,
-        thereIsQuestion: true,
-    },
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "Ta na hora de levantar! Hoje eu tenho prova de lógica de programação, não posso me atrasar de maneira alguma.",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: "",
-        thereIsQuestion: false,
-    },
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "E falando em prova, não estudei quase nada... Que que eu faço agora.",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: "",
-        thereIsQuestion: false,
-    },
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "E se eu...",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: "",
-        thereIsQuestion: false,
-    },
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "Já sei, vou estudando para prova conforme eu vou indo pra faculdade!",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: audioFiles.piter_comemoracao,
-        thereIsQuestion: false,
-    },
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "Assim vou treinando minha lógica de programação pra ir com a cabeça fresca pra prova!",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: "",
-        thereIsQuestion: false,
-    },
-    {
-        black_screen_transition: false,
-        speaker: "Piter",
-        text: "Vou tomar um banho pra ver se eu acordo, preciso estar 100% acordado para fazer essa prova.",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-waking.png",
-        audio: "",
-        thereIsQuestion: false,
-    },
-    {
-        black_screen_transition: true,
-        speaker: "Piter",
-        text: "... Cara o que vai cair na prova mesmo?",
-        img_character1: "",
-        img_character2: "",
-        background: "../img/piter-shower.png",
-        audio: audioFiles.porta,
-        thereIsQuestion: false,
-    },
-];
 
 // Começo do jogo
-callBlackScreen(0, 3000, 3000, false)
+callBlackScreen(0, 2500, 2000, false)
 audioFiles.alarme.volume = 0.3;
 playAudio(audioFiles.alarme);
+audioFiles.background.volume = 0.06;
+playAudio(audioFiles.background);
 setTimeout(function(){
     pauseAudio(audioFiles.alarme)
 }, 2200)
