@@ -1,5 +1,6 @@
 import { gameData } from './gameData.js';
 import { audioFiles } from './audioData.js';
+import { typewriter } from './typewriter.js';
 
 // Declaração de variáveis
 // Referenciado elementos da tela
@@ -10,21 +11,9 @@ const img_character2 = document.getElementById("img-character2");
 const speaker = document.getElementById("speaker");
 const text = document.getElementById("text");
 const box_question = document.getElementById("box-question");
+var blackScreen = document.getElementById("black-screen");
 var black_screen_transition;
 var thereIsQuestion;
-
-// Instancia da black screen
-var blackScreen = document.getElementById("black-screen");
-
-// Instancia do efeito de digitação
-const typewriter = new Typewriter(text, {
-    autoStart: true,
-    strings: "Eita, que horas será que são em?",
-    loop: false,
-    delay: 15,
-    pauseFor: 0,
-    cursor: "",
-})
 
 
 // Começo do jogo
