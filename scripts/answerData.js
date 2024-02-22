@@ -1,0 +1,7 @@
+const answerData = [
+    {
+
+    }
+]
+
+export { answerData };
