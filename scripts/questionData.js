@@ -6,7 +6,10 @@ const questionData = [
         "   entrar_no_banho('piter')<br>"+
         "   ligar_chuveiro();<br>"+
         "}"+
-    "</pre>"
+        "</pre>",
+        correctAnswer:"if",
+        correctFeedback: "nice",
+        wrongFeedback: "miss",
     }
 ]
 
