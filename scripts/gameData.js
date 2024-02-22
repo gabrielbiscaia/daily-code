@@ -1,6 +1,6 @@
 import { audioFiles } from "./audioData.js";
 
-var gameData = [
+const gameData = [
     // Parte 1 - Quarto
     {
         black_screen_transition: false,
