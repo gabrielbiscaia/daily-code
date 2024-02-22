@@ -1,7 +1,0 @@
-const answerData = [
-    {
-
-    }
-]
-
-export { answerData };
