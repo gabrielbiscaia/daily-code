@@ -21,6 +21,7 @@ callBlackScreen(0, 2500, 2000, false)
 audioFiles.alarme.volume = 0.3;
 playAudio(audioFiles.alarme);
 audioFiles.background.volume = 0.06;
+audioFiles.background.loop = true;
 playAudio(audioFiles.background);
 setTimeout(function(){
     pauseAudio(audioFiles.alarme)
@@ -38,6 +39,8 @@ function pauseAudio(audio){
 function nextStep() {
     if (gameData.length > 0) {
         var nextData = gameData.shift();
+
+        btn_arrow.style.display = 'none';
 
         if(nextData.black_screen_transition){
             callBlackScreen(100, 1000, 2000,nextData.thereIsQuestion)
@@ -76,7 +79,10 @@ function nextStep() {
         typewriter
             .deleteAll(0.1)
             .typeString(nextData.text)
-            .start();
+            .start()
+            .callFunction(() => {
+                btn_arrow.style.display = 'block';
+            })
     }
 }
 
