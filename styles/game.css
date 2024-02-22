@@ -146,13 +146,12 @@ body{
     font-family: 'Play', sans-serif !important;
     color: white;
     font-size: 20px;
-    position: relative;
-    right: 112px;
-    top: 8px;
 }
 
 input{
     font-family: 'Play', sans-serif !important;
+    border: dashed white 1px;
+    border-radius: 8px;
     font-size: 20px;
     color: white;
     background-color: #23272A;
