@@ -22,10 +22,10 @@ var totalCorrectAnswers = 0;
 
 
 // Começo do jogo
-callBlackScreen(0, 2500, 2000, false)
+callBlackScreen(0, 1000, 3000, false)
 playAudio(audioFiles.alarme, 0.3);
 audioFiles.background.loop = true;
-playAudio(audioFiles.background, 0.06);
+playAudio(audioFiles.background, 0.04);
 setTimeout(function(){
     pauseAudio(audioFiles.alarme)
 }, 2200)
@@ -57,7 +57,7 @@ function nextStep() {
         var nextData = gameData.shift();
 
         if(nextData.black_screen_transition){
-            callBlackScreen(100, 1000, 2000,nextData.thereIsQuestion)
+            callBlackScreen(100, 1000, 3000,nextData.thereIsQuestion)
         }else{
             if(nextData.thereIsQuestion){
                 showQuestion();
@@ -85,7 +85,7 @@ function nextStep() {
 
         if (nextData.audio != "") {
             setTimeout(function(){
-                playAudio(nextData.audio, 0.3);
+                playAudio(nextData.audio, 0.1);
             },200)
         }
 
@@ -153,7 +153,7 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration, 
         }else{
             btn_arrow.style.display = "block";
         }
-    }, blackScreenDuration + 1000)
+    }, blackScreenDuration + fadeOutDuration)
     blackScreen.classList.remove("fade-out");
 
 }
@@ -174,13 +174,13 @@ function blink(input_answer) {
 }
 
 btn_arrow.addEventListener("click", ()=>{
-    playAudio(audioFiles.button_next, 0.4)
+    playAudio(audioFiles.button_next, 0.1)
     nextStep();
 });
 
 btn_done.addEventListener("click", ()=>{
     var input_answer = document.getElementById("input-answer");
-    var answer = input_answer.value;
+    var answer = input_answer.value.toLowerCase().trim();
     verifyAnswer(answer)
 });
 

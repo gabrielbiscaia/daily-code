@@ -12,6 +12,7 @@ const audioFiles = {
     carro: new Audio('../audio/environment/carro.wav'),
     porta: new Audio('../audio/environment/porta.wav'),
     restaurante: new Audio('../audio/environment/restaurante.wav'),
+    shower: new Audio('../audio/environment/shower.wav'),
     // Audio background
     background: new Audio('../audio/background/background-music.wav'),
     // Audio interface
