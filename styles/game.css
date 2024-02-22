@@ -159,6 +159,7 @@ input{
     height: 24px;
     text-align: center;
     outline: none;
+    transition: background-color 0.5s ease;
 }
 
 #btn-done{
