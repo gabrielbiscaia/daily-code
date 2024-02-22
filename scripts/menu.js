@@ -79,5 +79,3 @@ btn_start.addEventListener("click", () =>{
     window.electronAPI.startGame();
   },100)
 })
-
-export { volume };
