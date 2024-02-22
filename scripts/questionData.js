@@ -1,4 +1,4 @@
-var questionData = [
+const questionData = [
     {
         questionText:
         "<pre>"+
