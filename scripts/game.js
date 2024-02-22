@@ -36,11 +36,18 @@ function pauseAudio(audio){
     audio.pause();
 }
 
+function enableArrow(){
+    btn_arrow.style.display = 'block';
+}
+
+function disableArrow(){
+    btn_arrow.style.display = 'none';
+}
+
 function nextStep() {
     if (gameData.length > 0) {
-        var nextData = gameData.shift();
 
-        btn_arrow.style.display = 'none';
+        var nextData = gameData.shift();
 
         if(nextData.black_screen_transition){
             callBlackScreen(100, 1000, 2000,nextData.thereIsQuestion)
@@ -77,12 +84,15 @@ function nextStep() {
         }
 
         typewriter
+            .callFunction(()=>{
+                disableArrow()
+            })
             .deleteAll(0.1)
             .typeString(nextData.text)
             .start()
-            .callFunction(() => {
-                btn_arrow.style.display = 'block';
-            })
+            .callFunction(()=>{
+                enableArrow()
+            });
     }
 }
 
