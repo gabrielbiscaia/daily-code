@@ -6,6 +6,10 @@ body{
     overflow: hidden;
 }
 
+b{
+    color: #D4AF37;
+}
+
 #black-screen {
     position: fixed;
     display: flex;
