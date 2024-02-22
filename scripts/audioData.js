@@ -13,7 +13,10 @@ const audioFiles = {
     porta: new Audio('../audio/environment/porta.wav'),
     restaurante: new Audio('../audio/environment/restaurante.wav'),
     // Audio background
-    background: new Audio('../audio/background/background-music.wav')
+    background: new Audio('../audio/background/background-music.wav'),
+    // Audio interface
+    button_next: new Audio('../audio/interface/button-next.wav')
+
 };
 
 export { audioFiles };
