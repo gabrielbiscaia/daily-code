@@ -1,6 +1,7 @@
 import { gameData } from './gameData.js';
 import { audioFiles } from './audioData.js';
 import { typewriter } from './typewriter.js';
+import { questionData } from './questionData.js';
 
 // Declaração de variáveis
 // Referenciado elementos da tela
@@ -11,7 +12,9 @@ const img_character1 = document.getElementById("img-character1");
 const img_character2 = document.getElementById("img-character2");
 const speaker = document.getElementById("speaker");
 const box_question = document.getElementById("box-question");
+const box_question_text = document.getElementById("box-question-text");
 var blackScreen = document.getElementById("black-screen");
+var input_answer = document.getElementById("input-answer")
 
 
 // Começo do jogo
@@ -50,7 +53,7 @@ function nextStep() {
             callBlackScreen(100, 1000, 2000,nextData.thereIsQuestion)
         }else{
             if(nextData.thereIsQuestion){
-                box_question.style.display = "block"
+                showQuestion();
             }else{
                 box_question.style.display = "none"
             }
@@ -94,6 +97,12 @@ function nextStep() {
     }
 }
 
+function showQuestion(){
+    var questionNow = questionData.shift();
+    box_question_text.innerHTML = questionNow.questionText;
+    box_question.style.display = "block"
+}
+
 function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration, thereIsQuestion){
     btn_arrow.style.display = 'none';
 
@@ -118,5 +127,12 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration, 
 
 }
 
-btn_arrow.addEventListener("click", nextStep);
-btn_done.addEventListener("click", nextStep);
+btn_arrow.addEventListener("click", ()=>{
+    nextStep();
+});
+btn_done.addEventListener("click", ()=>{
+    var answer = input_answer.value;
+    console.log(answer);
+    nextStep();
+});
+
