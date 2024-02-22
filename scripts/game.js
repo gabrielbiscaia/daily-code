@@ -5,15 +5,13 @@ import { typewriter } from './typewriter.js';
 // Declaração de variáveis
 // Referenciado elementos da tela
 const btn_arrow = document.getElementById("arrow");
+const btn_done = document.getElementById("btn-done");
 const img_background = document.getElementById("img-background");
 const img_character1 = document.getElementById("img-character1");
 const img_character2 = document.getElementById("img-character2");
 const speaker = document.getElementById("speaker");
-const text = document.getElementById("text");
 const box_question = document.getElementById("box-question");
 var blackScreen = document.getElementById("black-screen");
-var black_screen_transition;
-var thereIsQuestion;
 
 
 // Começo do jogo
@@ -27,7 +25,6 @@ setTimeout(function(){
     pauseAudio(audioFiles.alarme)
 }, 2200)
 
-// Função para reproduzir um áudio pré-carregado
 function playAudio(audio) {
     audio.play();
 }
@@ -91,7 +88,8 @@ function nextStep() {
             .typeString(nextData.text)
             .start()
             .callFunction(()=>{
-                enableArrow()
+                if(nextData.thereIsQuestion){}
+                else{enableArrow()}
             });
     }
 }
@@ -111,9 +109,9 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration, 
 
     setTimeout(function(){
         if(thereIsQuestion){
-            box_question.style.display = "block";
+            box_question.style.display = "none";
         }else{
-            btn_arrow.style.display = 'block';
+            btn_arrow.style.display = "block";
         }
     }, blackScreenDuration + 1000)
     blackScreen.classList.remove("fade-out");
@@ -121,4 +119,4 @@ function callBlackScreen (fadeInDuration, fadeOutDuration, blackScreenDuration, 
 }
 
 btn_arrow.addEventListener("click", nextStep);
-
+btn_done.addEventListener("click", nextStep);
