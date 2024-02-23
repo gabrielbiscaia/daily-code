@@ -110,7 +110,7 @@ function nextStep() {
         if(nextData.audio == audioFiles.button_encerrar){
             disableArrow();
             changeText("Obrigado por jogar 'DailyCode: Protótipo de Serious Game para o Ensino do Pensamento Computacional'"+
-            " se você é calouro <b>NÃO ESQUEÇA DE AVALIAR O PROTÓTIPO!</b> Voce acertou: "+totalCorrectAnswers+" de "+questionData.length+" perguntas.", false)
+            " se você é calouro <b>NÃO ESQUEÇA DE AVALIAR O PROTÓTIPO!</b> Voce acertou: "+totalCorrectAnswers+" de "+totalQuestions+" perguntas.", false)
 
         }else{
             changeText(nextData.text, nextData.thereIsQuestion)

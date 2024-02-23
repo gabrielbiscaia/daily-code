@@ -350,7 +350,7 @@ const gameData = [
     {
         black_screen_transition: false,
         speaker: "Bryan",
-        text: "Enzo deixa eu te falar, tava afim de pegar um lanche ali no R.U antes da prova."+ 
+        text: "Piter deixa eu te falar, tava afim de pegar um lanche ali no R.U antes da prova."+ 
         " Saí de casa muito cedo por causa do busão e não comi nada, você quer vir comigo?",
         img_character1: "../img/piter.png",
         img_character2: "../img/bryan.png",
