@@ -7,7 +7,7 @@ body{
 }
 
 b{
-    color: #D4AF37;
+    color: #fec50d;
 }
 
 #black-screen {
@@ -19,7 +19,8 @@ b{
     height: 100%;
     background-color: black;
     z-index: 1400;
-    opacity: 1; 
+    opacity: 1;
+    user-select: none;
 }
 
 /* Efeitos de transição */
@@ -52,6 +53,7 @@ b{
     bottom: 0;
     max-width: 100%;
     height: auto;
+    user-select: none;
 }
 
 #img-character1{
@@ -61,6 +63,7 @@ b{
     left: 25%;
     transform: translateX(-50%);
     z-index: 1100;
+    user-select: none;
 }
 
 #img-character2{
@@ -70,6 +73,7 @@ b{
     left: 75%;
     transform: translateX(-50%);
     z-index: 1100;
+    user-select: none;
 }
 
 /* Quem esta falando */
@@ -88,6 +92,7 @@ b{
     border-radius: 8px;
     z-index: 1200;
     letter-spacing: 2px;
+    user-select: none;
 }
 
 
@@ -98,6 +103,7 @@ b{
     font-size: 28px;
     padding: 24px;
     letter-spacing: 1.6px;
+    user-select: none;
 }
 
 #text-box{
@@ -121,6 +127,8 @@ b{
     transform: scale(1.6);
     transition: 0.3s;
     z-index: 1500;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 #arrow:hover{
@@ -134,7 +142,8 @@ b{
     position: absolute;
     top: 72px;
     right: 80px;
-    height: 160px;
+    min-height: 160px;
+    max-height: 240px;
     width: 400px;
     z-index: 1500;
     border: solid 8px #23272A;
@@ -159,7 +168,7 @@ input{
     font-size: 20px;
     color: white;
     background-color: #23272A;
-    width: 48px;
+    width: 96px;
     height: 24px;
     text-align: center;
     outline: none;
