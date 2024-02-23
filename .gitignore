@@ -6,3 +6,4 @@ jspm_packages/
 .tgz
 .cache
 .parcel-cache
+dist

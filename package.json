@@ -5,14 +5,44 @@
   "main": "scripts/main.js",
   "scripts": {
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:linux": "electron-builder --linux",
+    "dist:windows": "electron-builder --windows"
   },
   "author": "Gabriel Biscaia",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^28.2.1"
+    "electron": "^28.2.4",
+    "electron-builder": "^24.12.0"
   },
   "dependencies": {
     "typewriter-effect": "^2.21.0"
+  },
+  "build": {
+    "appId": "com.tcc.dailycode",
+    "productName": "DailyCode",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "img/icon-dailycode.ico",
+      "target": "nsis"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "img/icon-dailycode.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "tar.gz"
+      ],
+      "icon": "img/icon-dailycode.png"
+    }
   }
 }
