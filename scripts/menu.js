@@ -76,6 +76,6 @@ window.onload = function(){
 btn_start.addEventListener("click", () =>{
   playAudio(audioFiles.next);
   setTimeout(function(){
-    window.electronAPI.startGame();
+    window.location.href = 'game.html'
   },100)
 })
