@@ -27,7 +27,7 @@ DailyCode is a Visual Novel-style game where the player takes on the role of Pit
 
 ## Links
 - Desktop version: https://drive.google.com/drive/u/1/folders/1815LxDGaRayN4T-4m7jEo6LYDFj434pf
-- Website version: https://daily-code.gabrielbiscaia.com.br/src/game.html
+- Website version: https://daily-code.gabrielbiscaia.com.br/
 
 ## Technologies Used
 
