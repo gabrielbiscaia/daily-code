@@ -25,6 +25,10 @@ DailyCode is a Visual Novel-style game where the player takes on the role of Pit
 - Visual novel-style gameplay
 - Generated images using AI tools (MidJourney, DALL-E, Fooocus)
 
+## Links
+Download electron: https://drive.google.com/drive/u/1/folders/1815LxDGaRayN4T-4m7jEo6LYDFj434pf
+Site: https://daily-code.gabrielbiscaia.com.br/src/game.html
+
 ## Technologies Used
 
 - HTML, CSS, JavaScript (for game structure and mechanics)
