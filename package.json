@@ -1,9 +1,9 @@
 {
   "name": "dailycode",
   "version": "1.0.0",
-  "description": "TCC",
+  "description": "DailyCode — Visual Novel serious game prototype (TCC)",
   "scripts": {
-    "start": "npx serve ."
+    "start": "npx serve"
   },
   "author": "Gabriel Biscaia",
   "license": "ISC",

@@ -43,7 +43,7 @@ npm install
 npm start
 ```
 
-`npm start` serves the project with `npx serve` so the ES modules in `src/game.html` work over HTTP. Then open the URL printed in the terminal.
+This serves the project over HTTP (required for the ES modules in `src/game.html`) and prints a local URL to open.
 
 ## Target Audience
 
