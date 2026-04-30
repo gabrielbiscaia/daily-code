@@ -8,3 +8,4 @@ jspm_packages/
 .parcel-cache
 dist
 .vercel
+CLAUDE.md

@@ -110,7 +110,7 @@ const gameData = [
         img_character1: "",
         img_character2: "",
         background: "../img/piter-shower.png",
-        audio: audioFiles,
+        audio: audioFiles.shower,
         thereIsQuestion: false,
     },
     {
