@@ -26,13 +26,24 @@ DailyCode is a Visual Novel-style game where the player takes on the role of Pit
 - Generated images using AI tools (MidJourney, DALL-E, Fooocus)
 
 ## Links
-- Desktop version: https://drive.google.com/drive/u/1/folders/1815LxDGaRayN4T-4m7jEo6LYDFj434pf
-- Website version: https://daily-code.gabrielbiscaia.com.br/
+
+- Play online: https://daily-code.gabrielbiscaia.com.br/
+- Original desktop build (archived, no longer maintained): https://drive.google.com/drive/u/1/folders/1815LxDGaRayN4T-4m7jEo6LYDFj434pf
 
 ## Technologies Used
 
-- HTML, CSS, JavaScript (for game structure and mechanics)
-- Electron (for desktop application packaging)
+- HTML, CSS, JavaScript (game structure and mechanics)
+- [`typewriter-effect`](https://www.npmjs.com/package/typewriter-effect) (dialogue typing animation)
+- Vercel (static hosting)
+
+## Running Locally
+
+```bash
+npm install
+npm start
+```
+
+`npm start` serves the project with `npx serve` so the ES modules in `src/game.html` work over HTTP. Then open the URL printed in the terminal.
 
 ## Target Audience
 
