@@ -1,7 +1,7 @@
-import { resolve, dirname, join } from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 
-const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
+const repoRoot = resolve(import.meta.dirname, "..", "..");
 
 globalThis.Audio = class {
   constructor(src) {

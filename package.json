@@ -2,7 +2,6 @@
   "name": "dailycode",
   "version": "1.0.0",
   "description": "DailyCode — Visual Novel serious game prototype (TCC)",
-  "type": "module",
   "scripts": {
     "start": "npx serve"
   },
