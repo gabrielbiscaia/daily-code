@@ -6,8 +6,5 @@
     "start": "npx serve"
   },
   "author": "Gabriel Biscaia",
-  "license": "ISC",
-  "dependencies": {
-    "typewriter-effect": "^2.22.0"
-  }
+  "license": "ISC"
 }
