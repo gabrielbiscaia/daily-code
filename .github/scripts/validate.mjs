@@ -17,6 +17,8 @@ const importFromRepo = (relPath) =>
 const { gameData } = await importFromRepo("scripts/gameData.js");
 const { questionData } = await importFromRepo("scripts/questionData.js");
 
+// Count-only check, not position-aware: catches missing/extra questions but not
+// mid-array swaps. Position-aware would need IDs linking the two arrays.
 const flaggedSteps = gameData.filter((step) => step.thereIsQuestion).length;
 const questions = questionData.length;
 
